@@ -1,0 +1,4 @@
+{
+  "port": 5000,
+  "mongoURI": "mongodb+srv://leonid:auQrwv3aMG5Nme6S@shoppinglist.pftkl.mongodb.net/ShoppingList?retryWrites=true&w=majority"
+}
