@@ -13,16 +13,9 @@ router.get('/', async (req, res) => {
 
 router.post('/', async (req, res) => {
   try {
-    const {checked, value} = req.body
-
-    const list = new List({
-      checked,
-      value,
-    })
-
+    const list = new List(req.body)
     await list.save()
-
-    res.status(201).json({message: 'Успешно создано'})
+    res.status(201).json({body: list, message: 'Успешно создано'})
   } catch (e) {
     res.status(500).json({message: 'Ошибка на сервере при запросе'})
   }
@@ -44,7 +37,6 @@ router.delete('/:id', async (req, res) => {
     const updatedList = await List.findByIdAndRemove(req.params.id)
     res.json(updatedList)
   } catch (e) {
-    console.log(req)
     res.status(500).json({message: 'Ошибка на сервере при запросе'})
   }
 })
