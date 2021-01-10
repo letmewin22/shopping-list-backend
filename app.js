@@ -9,7 +9,7 @@ app.use(express.json({extended: true}))
 
 app.use('/api/list', require('./routes/list.routes'))
 
-const PORT = config.get('port') || 5000
+const PORT = process.env.port || config.get('port')
 
 const start = async () => {
   try {
