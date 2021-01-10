@@ -10,7 +10,7 @@ app.use(express.static('static'))
 
 app.use('/api/list', require('./routes/list.routes'))
 
-const PORT = config.get('port')
+const PORT = process.env.PORT || config.get('port')
 
 const start = async () => {
   try {
