@@ -5,7 +5,7 @@ const router = Router()
 router.get('/', async (req, res) => {
   try {
     const list = await List.find()
-    res.json(list)
+    res.status(200).json(list)
   } catch (e) {
     res.status(500).json({message: 'Ошибка на сервере при запросе'})
   }
@@ -26,7 +26,7 @@ router.put('/:id', async (req, res) => {
     const updatedList = await List.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
     })
-    res.json(updatedList)
+    res.status(200).json(updatedList)
   } catch (e) {
     res.status(500).json({message: 'Ошибка на сервере при запросе'})
   }
@@ -35,7 +35,7 @@ router.put('/:id', async (req, res) => {
 router.delete('/:id', async (req, res) => {
   try {
     const updatedList = await List.findByIdAndRemove(req.params.id)
-    res.json(updatedList)
+    res.status(200).json(updatedList)
   } catch (e) {
     res.status(500).json({message: 'Ошибка на сервере при запросе'})
   }
