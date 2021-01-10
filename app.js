@@ -6,6 +6,7 @@ const cors = require('./middleware/cors.middleware')
 const app = express()
 app.use(cors)
 app.use(express.json({extended: true}))
+app.use(express.static('static'))
 
 app.use('/api/list', require('./routes/list.routes'))
 
@@ -27,7 +28,3 @@ const start = async () => {
 }
 
 start()
-
-// app.get('/', (req, res) => {
-//   res.send('hello world')
-// })
