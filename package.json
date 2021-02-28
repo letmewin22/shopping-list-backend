@@ -14,5 +14,10 @@
     "express": "^4.17.1",
     "mongoose": "^5.11.11",
     "nodemon": "^2.0.7"
+  },
+  "devDependencies": {
+    "eslint": "^7.18.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-formatter-pretty": "^4.0.0"
   }
 }

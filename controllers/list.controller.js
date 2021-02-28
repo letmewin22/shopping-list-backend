@@ -3,7 +3,7 @@ const List = require('../models/List.model')
 class ListController {
   async getItems(req, res) {
     try {
-      const list = await List.find()
+      const list = await List.find({user: req.query.user})
       res.status(200).json(list)
     } catch (e) {
       res.status(500).json({message: 'Ошибка на сервере при запросе'})
